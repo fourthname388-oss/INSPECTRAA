@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INSPECTRAA</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<script src="https://kit.fontawesome.com/4b8b2d3f5b.js" crossorigin="anonymous"></script>
+
+<style>
+* {margin:0; padding:0; box-sizing:border-box;}
+body {
+  font-family: 'Poppins', sans-serif;
+  background:#f7f9fc;
+  color:#333;
+}
+
+/* NAV */
+nav {
+  display:flex;
+  justify-content:space-between;
+  padding:15px 30px;
+  background:white;
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
+  position:sticky;
+  top:0;
+}
+nav h2 {color:#0a66c2;}
+nav a {
+  text-decoration:none;
+  color:#333;
+  margin-left:15px;
+}
+
+/* HERO */
+.hero {
+  padding:60px 20px;
+  text-align:center;
+  background:linear-gradient(135deg,#0a66c2,#4facfe);
+  color:white;
+}
+.hero h1 {
+  font-size:32px;
+  margin-bottom:10px;
+}
+.hero p {
+  margin-bottom:20px;
+}
+.btn {
+  background:#ff7a00;
+  padding:12px 25px;
+  border:none;
+  color:white;
+  font-size:16px;
+  border-radius:30px;
+  cursor:pointer;
+  transition:0.3s;
+}
+.btn:hover {
+  transform:scale(1.05);
+}
+
+/* SECTIONS */
+.section {
+  padding:50px 20px;
+  text-align:center;
+}
+.section h2 {
+  margin-bottom:20px;
+}
+
+/* FEATURES */
+.features {
+  display:grid;
+  grid-template-columns:1fr;
+  gap:20px;
+}
+.card {
+  background:white;
+  padding:20px;
+  border-radius:15px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
+  transition:0.3s;
+}
+.card:hover {
+  transform:translateY(-5px);
+}
+.card i {
+  font-size:30px;
+  color:#0a66c2;
+  margin-bottom:10px;
+}
+
+/* HOW */
+.steps {
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+/* CONTACT */
+.contact {
+  background:#0a66c2;
+  color:white;
+}
+
+/* FOOTER */
+footer {
+  text-align:center;
+  padding:20px;
+  background:#222;
+  color:white;
+}
+
+/* ANIMATION */
+.fade {
+  opacity:0;
+  transform:translateY(20px);
+  transition:0.6s;
+}
+.fade.show {
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* DESKTOP */
+@media(min-width:768px){
+  .hero h1 {font-size:48px;}
+  .features {
+    grid-template-columns:repeat(4,1fr);
+  }
+  .steps {
+    flex-direction:row;
+    justify-content:center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <h2>INSPECTRAA</h2>
+  <div>
+    <a href="#">Home</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </div>
+</nav>
+
+<section class="hero fade">
+  <h1>Know Your Home Before You Own It</h1>
+  <p>Avoid hidden defects & costly surprises</p>
+  <button class="btn" onclick="bookNow()">Book Inspection</button>
+</section>
+
+<section class="section fade">
+  <h2>Why INSPECTRAA?</h2>
+  <div class="features">
+    <div class="card">
+      <i class="fas fa-home"></i>
+      <p>Detect structural issues</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-file-alt"></i>
+      <p>Clear reports</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-rupee-sign"></i>
+      <p>Save money</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-shield-alt"></i>
+      <p>Reduce risk</p>
+    </div>
+  </div>
+</section>
+
+<section class="section fade">
+  <h2>How It Works</h2>
+  <div class="steps">
+    <div class="card">📅 Book</div>
+    <div class="card">🔍 Inspect</div>
+    <div class="card">📊 Report</div>
+    <div class="card">✅ Decide</div>
+  </div>
+</section>
+
+<section class="section fade">
+  <h2>Pricing</h2>
+  <p><b>Starting from ₹6000</b></p>
+</section>
+
+<section class="section contact fade">
+  <h2>Contact Us</h2>
+  <p>Email: support@inspectraa.com</p>
+  <p>Phone: +91-6703837321</p>
+</section>
+
+<footer>
+  <p>© 2026 INSPECTRAA</p>
+</footer>
+
+<script>
+// Button action
+
+
+// Scroll animation
+const fades = document.querySelectorAll('.fade');
+window.addEventListener('scroll', ()=>{
+  fades.forEach(el=>{
+    const top = el.getBoundingClientRect().top;
+    if(top < window.innerHeight - 50){
+      el.classList.add('show');
+    }
+  });
+});
+</script>
+
+</body>
+</html>
